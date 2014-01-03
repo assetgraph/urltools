@@ -1,4 +1,7 @@
 #url-tools
+
+[![Build Status](https://travis-ci.org/slang800/url-tools.png?branch=master)](https://travis-ci.org/slang800/url-tools)
+
 Tools for manipulating urls
 
 ## Code Style
