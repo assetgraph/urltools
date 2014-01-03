@@ -1,0 +1,31 @@
+{
+  "name": "url-tools",
+  "repository": "git://github.com/slang800/url-tools.git",
+  "version": "0.1.0",
+  "license": "GPLv3",
+  "maintainers": [
+    {
+      "name": "Andreas Lind Petersen",
+      "email": "andreas@one.com"
+    },
+    {
+      "name": "Sean Lang",
+      "email": "slang800@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "underscore": "~1.5.2",
+    "glob": "~3.2.7",
+    "passerror": "~1.0.0"
+  },
+  "devDependencies": {
+    "vows": "~0.7.0"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "main": "lib",
+  "scripts": {
+    "test": "vows test --spec"
+  }
+}
