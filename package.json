@@ -1,6 +1,6 @@
 {
-  "name": "url-tools",
-  "repository": "git://github.com/slang800/url-tools.git",
+  "name": "urltools",
+  "repository": "git://github.com/assetgraph/urltools.git",
   "version": "0.1.0",
   "license": "BSD",
   "maintainers": [
