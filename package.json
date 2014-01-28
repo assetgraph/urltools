@@ -2,7 +2,7 @@
   "name": "url-tools",
   "repository": "git://github.com/slang800/url-tools.git",
   "version": "0.1.0",
-  "license": "GPLv3",
+  "license": "BSD",
   "maintainers": [
     {
       "name": "Andreas Lind Petersen",
