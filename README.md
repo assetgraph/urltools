@@ -1,6 +1,6 @@
-#url-tools
+#urltools
 
-[![Build Status](https://travis-ci.org/slang800/url-tools.png?branch=master)](https://travis-ci.org/slang800/url-tools)
+[![Build Status](https://travis-ci.org/assetgraph/urltools.png?branch=master)](https://travis-ci.org/assetgraph/urltools)
 
 Tools for manipulating urls
 
