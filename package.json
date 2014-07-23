@@ -19,6 +19,7 @@
     "glob": "~3.2.7"
   },
   "devDependencies": {
+    "jshint": "^2.5.2",
     "vows": "~0.7.0"
   },
   "engines": {
@@ -26,6 +27,7 @@
   },
   "main": "lib",
   "scripts": {
-    "test": "vows test --spec"
+    "lint": "jshint .",
+    "test": "npm run lint && vows test --spec"
   }
 }
