@@ -1,6 +1,9 @@
 #urltools
 
-[![Build Status](https://travis-ci.org/assetgraph/urltools.png?branch=master)](https://travis-ci.org/assetgraph/urltools)
+[![NPM version](https://badge.fury.io/js/urltools.png)](http://badge.fury.io/js/urltools)
+[![Build Status](https://travis-ci.org/Munter/assetgraph/urltools.png?branch=master)](https://travis-ci.org/assetgraph/urltools)
+[![Coverage Status](https://coveralls.io/repos/assetgraph/urltools/badge.png?branch=master)](https://coveralls.io/r/assetgraph/urltools?branch=master)
+[![Dependency Status](https://david-dm.org/assetgraph/urltools.png)](https://david-dm.org/assetgraph/urltools)
 
 Tools for manipulating urls
 
