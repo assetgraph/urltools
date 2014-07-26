@@ -56,7 +56,7 @@ vows.describe('Utility functions in urlTools').addBatch({
     'findCommonUrlPrefix from and to http, different hostname': {
         topic: urlTools.findCommonUrlPrefix('http://example.com/index.html', 'http://other.com/index.html'),
         'should find the common prefix': function (relativeUrl) {
-            assert.equal(relativeUrl, 'http://');
+            assert.equal(relativeUrl, '');
         }
     },
     'findCommonUrlPrefix to file in dir one level up with shared prefix': {
@@ -75,6 +75,12 @@ vows.describe('Utility functions in urlTools').addBatch({
         topic: urlTools.findCommonUrlPrefix('file:///home/andreas/work/oneweb/http-pub/', 'file:///home/andreas/work/oneweb/http-pub/static/413c60cd8d.css'),
         'should find the common prefix': function (relativeUrl) {
             assert.equal(relativeUrl, 'file:///home/andreas/work/oneweb/http-pub');
+        }
+    },
+    'findCommonUrlPrefix to file, to different root directories': {
+        topic: urlTools.findCommonUrlPrefix('file:///home/andreas/', 'file:///etc/'),
+        'should find the common prefix': function (relativeUrl) {
+            assert.equal(relativeUrl, 'file://');
         }
     }
 })['export'](module);
