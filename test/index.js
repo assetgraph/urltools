@@ -38,5 +38,49 @@ vows.describe('Utility functions in urlTools').addBatch({
         'should build the proper relative url': function (relativeUrl) {
             assert.equal(relativeUrl, 'static/413c60cd8d.css');
         }
+    },
+
+
+    'findCommonUrlPrefix with different protocols': {
+        topic: urlTools.findCommonUrlPrefix('http://example.com/the/thing.html', 'file:///home/thedude/stuff.png'),
+        'should return an empty string': function (relativeUrl) {
+            assert.equal(relativeUrl, '');
+        }
+    },
+    'findCommonUrlPrefix from and to http, same hostname': {
+        topic: urlTools.findCommonUrlPrefix('http://example.com/the/thing.html', 'http://example.com/the/other/stuff.html'),
+        'should find the common prefix': function (relativeUrl) {
+            assert.equal(relativeUrl, 'http://example.com/the');
+        }
+    },
+    'findCommonUrlPrefix from and to http, different hostname': {
+        topic: urlTools.findCommonUrlPrefix('http://example.com/index.html', 'http://other.com/index.html'),
+        'should find the common prefix': function (relativeUrl) {
+            assert.equal(relativeUrl, '');
+        }
+    },
+    'findCommonUrlPrefix to file in dir one level up with shared prefix': {
+        topic: urlTools.findCommonUrlPrefix('file:///home/andreas/mystuff.txt', 'file:///home/anders/hisstuff.txt'),
+        'should find the common prefix': function (relativeUrl) {
+            assert.equal(relativeUrl, 'file:///home');
+        }
+    },
+    'findCommonUrlPrefix to file in dir one level up': {
+        topic: urlTools.findCommonUrlPrefix('file:///home/andreas/mystuff.txt', 'file:///home/otherguy/hisstuff.txt'),
+        'should find the common prefix': function (relativeUrl) {
+            assert.equal(relativeUrl, 'file:///home');
+        }
+    },
+    'findCommonUrlPrefix to file one level down': {
+        topic: urlTools.findCommonUrlPrefix('file:///home/andreas/work/oneweb/http-pub/', 'file:///home/andreas/work/oneweb/http-pub/static/413c60cd8d.css'),
+        'should find the common prefix': function (relativeUrl) {
+            assert.equal(relativeUrl, 'file:///home/andreas/work/oneweb/http-pub');
+        }
+    },
+    'findCommonUrlPrefix to file, to different root directories': {
+        topic: urlTools.findCommonUrlPrefix('file:///home/andreas/', 'file:///etc/'),
+        'should find the common prefix': function (relativeUrl) {
+            assert.equal(relativeUrl, 'file://');
+        }
     }
 })['export'](module);
