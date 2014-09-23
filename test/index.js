@@ -82,5 +82,17 @@ vows.describe('Utility functions in urlTools').addBatch({
         'should find the common prefix': function (relativeUrl) {
             assert.equal(relativeUrl, 'file://');
         }
+    },
+    'findCommonUrlPrefix on empty input': {
+        topic: urlTools.findCommonUrlPrefix(),
+        'should return the empty string': function (relativeUrl) {
+            assert.equal(relativeUrl, '');
+        }
+    },
+    'findCommonUrlPrefix with a single file url as input': {
+        topic: urlTools.findCommonUrlPrefix('file:///home/munter/blog/index.html'),
+        'should return the empty string': function (relativeUrl) {
+            assert.equal(relativeUrl, 'file:///home/munter/blog/');
+        }
     }
 })['export'](module);
