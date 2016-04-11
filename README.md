@@ -1,7 +1,7 @@
 #urltools
 
 [![NPM version](https://badge.fury.io/js/urltools.svg)](http://badge.fury.io/js/urltools)
-[![Build Status](https://travis-ci.org/Munter/assetgraph/urltools.svg?branch=master)](https://travis-ci.org/assetgraph/urltools)
+[![Build Status](https://travis-ci.org/assetgraph/urltools.svg?branch=master)](https://travis-ci.org/assetgraph/urltools)
 [![Coverage Status](https://coveralls.io/repos/assetgraph/urltools/badge.svg?branch=master)](https://coveralls.io/r/assetgraph/urltools?branch=master)
 [![Dependency Status](https://david-dm.org/assetgraph/urltools.svg)](https://david-dm.org/assetgraph/urltools)
 
