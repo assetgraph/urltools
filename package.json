@@ -3,7 +3,7 @@
   "repository": "git://github.com/assetgraph/urltools.git",
   "description": "URL tooling for assetgraph",
   "version": "0.2.0",
-  "license": "BSD",
+  "license": "BSD-2-Clause",
   "maintainers": [
     {
       "name": "Andreas Lind Petersen",
