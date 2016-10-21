@@ -17,8 +17,26 @@ vows.describe('Utility functions in urlTools').addBatch({
     },
     'buildRelativeUrl from and to http, different hostname': {
         topic: urlTools.buildRelativeUrl('http://example.com/index.html', 'http://other.com/index.html'),
-        'should give up and return the absolute target url': function (relativeUrl) {
-            assert.equal(relativeUrl, 'http://other.com/index.html');
+        'should build a protocol-relative url': function (relativeUrl) {
+            assert.equal(relativeUrl, '//other.com/index.html');
+        }
+    },
+    'buildRelativeUrl to the same url': {
+        topic: urlTools.buildRelativeUrl('http://example.com/index.html', 'http://example.com/index.html'),
+        'should return the empty string': function (relativeUrl) {
+            assert.equal(relativeUrl, '');
+        }
+    },
+    'buildRelativeUrl with a trailing question mark': {
+        topic: urlTools.buildRelativeUrl('http://example.com/index.html', 'other.html?'),
+        'should preserve the question mark': function (relativeUrl) {
+            assert.equal(relativeUrl, 'other.html?');
+        }
+    },
+    'buildRelativeUrl to the same url with a fragment': {
+        topic: urlTools.buildRelativeUrl('http://example.com/index.html', 'http://example.com/index.html#foo'),
+        'should just return the fragment': function (relativeUrl) {
+            assert.equal(relativeUrl, '#foo');
         }
     },
     'buildRelativeUrl to file in dir one level up with shared prefix': {
