@@ -2,7 +2,7 @@
   "name": "urltools",
   "repository": "git://github.com/assetgraph/urltools.git",
   "description": "URL tooling for assetgraph",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "license": "BSD-2-Clause",
   "maintainers": [
     {
