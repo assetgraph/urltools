@@ -109,8 +109,32 @@ vows.describe('Utility functions in urlTools').addBatch({
     },
     'findCommonUrlPrefix with a single file url as input': {
         topic: urlTools.findCommonUrlPrefix('file:///home/munter/blog/index.html'),
-        'should return the empty string': function (relativeUrl) {
+        'should find the deepest directory': function (relativeUrl) {
             assert.equal(relativeUrl, 'file:///home/munter/blog/');
+        }
+    },
+    'findCommonUrlPrefix with a single http url with a trailing slash as input': {
+        topic: urlTools.findCommonUrlPrefix('http://mntr.dk/'),
+        'should return the domain': function (relativeUrl) {
+            assert.equal(relativeUrl, 'http://mntr.dk/');
+        }
+    },
+    'findCommonUrlPrefix with a single http url with no trailing slash as input': {
+        topic: urlTools.findCommonUrlPrefix('http://mntr.dk'),
+        'should return the domain': function (relativeUrl) {
+            assert.equal(relativeUrl, 'http://mntr.dk');
+        }
+    },
+    'findCommonUrlPrefix with a single https url with a trailing slash as input': {
+        topic: urlTools.findCommonUrlPrefix('https://mntr.dk/'),
+        'should return the domain': function (relativeUrl) {
+            assert.equal(relativeUrl, 'https://mntr.dk/');
+        }
+    },
+    'findCommonUrlPrefix with a single https url with no trailing slash as input': {
+        topic: urlTools.findCommonUrlPrefix('https://mntr.dk'),
+        'should return the domain': function (relativeUrl) {
+            assert.equal(relativeUrl, 'https://mntr.dk');
         }
     }
 })['export'](module);
