@@ -28,7 +28,7 @@ vows.describe('Utility functions in urlTools').addBatch({
         }
     },
     'buildRelativeUrl with a trailing question mark': {
-        topic: urlTools.buildRelativeUrl('http://example.com/index.html', 'other.html?'),
+        topic: urlTools.buildRelativeUrl('http://foo.com/index.html', 'http://foo.com/other.html?'),
         'should preserve the question mark': function (relativeUrl) {
             assert.equal(relativeUrl, 'other.html?');
         }
