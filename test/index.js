@@ -33,6 +33,13 @@ vows.describe('Utility functions in urlTools').addBatch({
             assert.equal(relativeUrl, 'other.html?');
         }
     },
+    'buildRelativeUrl with a trailing question mark and fragment identifier': {
+        topic: urlTools.buildRelativeUrl('file:///foobar/index.css', 'file:///foobar/fontawesome-webfont.eot?#iefix'),
+        'should preserve the question mark': function (relativeUrl) {
+            assert.equal(relativeUrl, 'fontawesome-webfont.eot?#iefix');
+        }
+    },
+
     'buildRelativeUrl to the same url with a fragment': {
         topic: urlTools.buildRelativeUrl('http://example.com/index.html', 'http://example.com/index.html#foo'),
         'should just return the fragment': function (relativeUrl) {
