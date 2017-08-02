@@ -70,6 +70,12 @@ vows.describe('Utility functions in urlTools').addBatch({
             assert.equal(relativeUrl, 'banner-phone.jpeg?foo,bar');
         }
     },
+    'buildRelativeUrl to url with comma in the fragment identifier': {
+        topic: urlTools.buildRelativeUrl('file:///foobar/index.html', 'file:///foobar/banner-phone.jpeg#foo,bar'),
+        'should build the proper relative url': function (relativeUrl) {
+            assert.equal(relativeUrl, 'banner-phone.jpeg#foo,bar');
+        }
+    },
 
     'findCommonUrlPrefix with different protocols': {
         topic: urlTools.findCommonUrlPrefix('http://example.com/the/thing.html', 'file:///home/thedude/stuff.png'),
