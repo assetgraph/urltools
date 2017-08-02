@@ -29,7 +29,7 @@
   "main": "lib",
   "scripts": {
     "lint": "jshint .",
-    "test": "npm run lint && vows test --spec",
-    "travis": "npm run test"
+    "test": "vows test --spec",
+    "travis": "npm run test && npm run lint"
   }
 }
