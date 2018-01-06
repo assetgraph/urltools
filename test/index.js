@@ -1,3 +1,4 @@
+/*global describe, it*/
 var expect = require('unexpected');
 var urlTools = require('../lib');
 
