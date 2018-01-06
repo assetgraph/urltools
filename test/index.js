@@ -76,7 +76,26 @@ vows.describe('Utility functions in urlTools').addBatch({
             assert.equal(relativeUrl, 'banner-phone.jpeg#foo,bar');
         }
     },
-
+    'buildRootRelativeUrl from file: to file: inside root': {
+        topic: urlTools.buildRootRelativeUrl(
+            'file:///path/to/root/some/asset.html',
+            'file:///path/to/root/some/other/asset.html',
+            'file:///path/to/root/'
+        ),
+        'should build the proper root relative url': function (relativeUrl) {
+            assert.equal(relativeUrl, '/some/other/asset.html');
+        }
+    },
+    'buildRootRelativeUrl from file: to file: outside root': {
+        topic: urlTools.buildRootRelativeUrl(
+            'file:///some/path/to/root/some/asset.html',
+            'file:///some/path/somewhere/else.html',
+            'file:///some/path/to/root/'
+        ),
+        'should issue a relative url rather than an absolute one': function (relativeUrl) {
+            assert.equal(relativeUrl, '../../../somewhere/else.html');
+        }
+    },
     'findCommonUrlPrefix with different protocols': {
         topic: urlTools.findCommonUrlPrefix('http://example.com/the/thing.html', 'file:///home/thedude/stuff.png'),
         'should return an empty string': function (relativeUrl) {
