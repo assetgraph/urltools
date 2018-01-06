@@ -21,7 +21,8 @@
   },
   "devDependencies": {
     "jshint": "^2.5.2",
-    "vows": "~0.8.1"
+    "mocha": "^4.1.0",
+    "unexpected": "^10.36.2"
   },
   "engines": {
     "node": ">= 4"
