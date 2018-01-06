@@ -30,7 +30,7 @@
   "main": "lib",
   "scripts": {
     "lint": "jshint .",
-    "test": "vows test --spec",
+    "test": "mocha",
     "travis": "npm run test && npm run lint"
   }
 }
