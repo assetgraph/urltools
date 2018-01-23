@@ -199,3 +199,23 @@ describe('urlTools', function () {
         });
     });
 });
+
+describe('on Windows', function () {
+    var originalPlatform = process.platform;
+    beforeEach(function () {
+        Object.defineProperty(process, 'platform', { value: 'win32' });
+    });
+    afterEach(function () {
+        Object.defineProperty(process, 'platform', { value: originalPlatform });
+    });
+
+    describe('#urlOrFsPathToUrl', function () {
+        it('should reinstate the drive letter in decoded form', function () {
+            expect(
+                urlTools.fileUrlToFsPath('file:///C%3A/foo/bar%20quux.png'),
+                'to equal',
+                'C:/foo/bar quux.png'
+            );
+        });
+    });
+});
