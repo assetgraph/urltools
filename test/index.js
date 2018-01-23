@@ -1,4 +1,4 @@
-/*global describe, it*/
+/*global describe, it, beforeEach, afterEach*/
 var expect = require('unexpected');
 var urlTools = require('../lib');
 
