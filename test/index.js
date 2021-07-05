@@ -198,6 +198,14 @@ describe('urlTools', function () {
             ), 'to equal', 'https://mntr.dk');
         });
     });
+
+    describe('fileUrlToFsPath', function () {
+        it('should decode %40 to @', function () {
+            expect(urlTools.fileUrlToFsPath(
+                'file:///path/to/%40jobby/project/index.html'
+            ), 'to equal', '/path/to/@jobby/project/index.html');
+        });
+    });
 });
 
 describe('on Windows', function () {
